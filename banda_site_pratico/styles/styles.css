@@ -1,0 +1,20 @@
+:root{--brand:#CFF250;--bg:#212226;--text:#FFFFFF;}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{background-color:var(--bg);color:var(--text);font-family:"Lato",sans-serif;line-height:1.6}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;600;700;900&display=swap');
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:var(--brand);color:#212226;z-index:1000}
+h1,h2,h3,h4{font-family:"Poppins",sans-serif}
+h2{border-bottom:2px solid var(--brand);padding-bottom:.5rem;margin-bottom:1rem}
+.navbar-dark .navbar-nav .nav-link{color:var(--brand)}
+.navbar-dark .navbar-nav .nav-link:hover,.navbar-dark .navbar-nav .nav-link:focus{color:#fff;text-decoration:underline}
+.navbar-toggler:focus{box-shadow:0 0 0 .25rem rgba(207,242,80,.35)}
+.btn-primary{background-color:var(--brand);border-color:var(--brand);color:#212226}
+.btn-primary:hover,.btn-primary:focus{background-color:#212226;border-color:var(--brand);color:var(--brand)}
+.card{background:#fff;color:#212226}
+.card .card-title{color:#212226}
+footer{border-top:2px solid var(--brand);background:var(--bg);color:var(--text)}
+footer a{color:var(--text)} footer a:hover{color:var(--brand)} footer .fa-brands{font-size:1.25rem}
+.hero .display-4{text-shadow:0 2px 8px rgba(0,0,0,.5)}
+@media (max-width: 992px){.hero .display-4{font-size:2.25rem}}
+@media (max-width: 768px){.navbar-nav{text-align:center}.navbar-nav .nav-item{margin:.25rem 0}}
