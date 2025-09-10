@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site oficial de The Weeknd - Música, Datas de Turnê, Álbuns e mais">
+    <meta name="keywords" content="The Weeknd, Abel Tesfaye, música, artista, turnê, álbuns, After Hours, Starboy">
+    <title>The Weeknd | Site Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .album-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .album-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .tour-date {
+            border-left: 3px solid #9c1de7;
+        }
+        
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+        }
+        
+        .form-input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #9c1de7;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: #1a1a1a;
+                padding: 20px;
+                z-index: 1000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho/Navegação -->
+    <header class="bg-black py-4 px-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.pinimg.com/564x/42/c9/77/42c9771cbdb479146788c6e24535fada.jpg" alt="Logo do The Weeknd" class="h-12">
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-purple-500 active">Início</a>
+                <a href="#about" class="nav-link text-white hover:text-purple-500">Sobre</a>
+                <a href="#albums" class="nav-link text-white hover:text-purple-500">Álbuns</a>
+                <a href="#tour" class="nav-link text-white hover:text-purple-500">Turnê</a>
+                <a href="#contact" class="nav-link text-white hover:text-purple-500">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home" class="nav-link text-white hover:text-purple-500 py-2">Início</a>
+            <a href="#about" class="nav-link text-white hover:text-purple-500 py-2">Sobre</a>
+            <a href="#albums" class="nav-link text-white hover:text-purple-500 py-2">Álbuns</a>
+            <a href="#tour" class="nav-link text-white hover:text-purple-500 py-2">Turnê</a>
+            <a href="#contact" class="nav-link text-white hover:text-purple-500 py-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal - Todas as páginas em uma -->
+    <main>
+        <!-- Página Inicial -->
+        <section id="home" class="page active">
+            <div class="hero flex items-center justify-center">
+                <div class="text-center px-4">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-purple-500">THE WEEKND</h1>
+                    <p class="text-xl md:text-2xl mb-8">Turnê Mundial After Hours Til Dawn</p>
+                    <a href="#tour" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300">DATAS DA TURNÊ</a>
+                </div>
+            </div>
+            
+            <div class="container mx-auto py-16 px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Último Lançamento</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="https://lastfm.freetls.fastly.net/i/u/ar0/7da8e979d89d285b5ddf44e64b92f16c.jpg" alt="Capa do Álbum Dawn FM" class="w-full rounded-lg shadow-2xl">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">DAWN FM</h3>
+                        <p class="text-gray-300 mb-6">O quinto álbum de estúdio do cantor canadense The Weeknd, lançado em 7 de janeiro de 2022, pela XO e Republic Records.</p>
+                        <div class="mb-6">
+                            <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 mr-4">Ouvir Agora</a>
+                            <a href="#albums" class="border border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white px-6 py-2 rounded-full font-semibold transition duration-300">Ver Todos os Álbuns</a>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-spotify text-2xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-apple text-2xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-2xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-deezer text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página Sobre -->
+        <section id="about" class="page hidden">
+            <div class="container mx-auto py-16 px-4">
+                <h1 class="text-4xl font-bold mb-12 text-center">Sobre The Weeknd</h1>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://assets.vogue.com/photos/6020951c1fce9dcc8334fa9d/master/w_2560%2Cc_limit/GettyImages-1300911552.jpg" alt="The Weeknd se apresentando" class="w-full rounded-lg shadow-xl">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 text-purple-500">Abel Makkonen Tesfaye</h2>
+                        <p class="text-gray-300 mb-4">Nascido em 16 de fevereiro de 1990, conhecido profissionalmente como The Weeknd, é um cantor, compositor e produtor musical canadense.</p>
+                        <p class="text-gray-300 mb-4">Conhecido por sua versatilidade sonora e letras sombrias, a música de Tesfaye explora escapismo, romance e melancolia, e é frequentemente inspirada por experiências pessoais.</p>
+                        <p class="text-gray-300 mb-6">Ele ganhou inúmeros prêmios, incluindo quatro Grammy Awards, vinte Billboard Music Awards, seis American Music Awards, dois MTV Video Music Awards e uma indicação ao Oscar.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 mt-8">Destaques da Carreira</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">•</span>
+                                <span>Lançou a primeira mixtape "House of Balloons" em 2011</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">•</span>
+                                <span>Single de sucesso "Earned It" para Cinquenta Tons de Cinza (2015)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">•</span>
+                                <span>Álbum "Beauty Behind the Madness" estreou em #1 (2015)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">•</span>
+                                <span>Show do intervalo do Super Bowl LV (2021)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-500 mr-2">•</span>
+                                <span>Single recordista "Blinding Lights" (2019)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Prêmios & Conquistas</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-800 p-6 rounded-lg text-center">
+                            <div class="text-purple-500 text-4xl mb-4">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Grammy Awards</h3>
+                            <p class="text-gray-300">4 Vitórias, 10 Indicações</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 p-6 rounded-lg text-center">
+                            <div class="text-purple-500 text-4xl mb-4">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Billboard Awards</h3>
+                            <p class="text-gray-300">20 Vitórias, 35 Indicações</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 p-6 rounded-lg text-center">
+                            <div class="text-purple-500 text-4xl mb-4">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Outras Honrarias</h3>
+                            <p class="text-gray-300">6 AMAs, 2 VMAs, 1 Indicação ao Oscar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Álbuns -->
+        <section id="albums" class="page hidden">
+            <div class="container mx-auto py-16 px-4">
+                <h1 class="text-4xl font-bold mb-12 text-center">Discografia</h1>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Álbum 1 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e2/61/f8/e261f8c1-73db-9a7a-c89e-1068f19970e0/16UMGIM67863.rgb.jpg/1200x630bb.jpg" alt="Capa do Álbum Starboy" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Starboy</h3>
+                            <p class="text-gray-400 mb-4">2016 • 18 faixas</p>
+                            <p class="text-gray-300 mb-4">Incluindo sucessos como "Starboy" e "I Feel It Coming" com Daft Punk.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">Platina</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Álbum 2 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://www.vagalume.com.br/the-weeknd/discografia/dawn-fm.webp" alt="Capa do Álbum Dawn FM" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Dawn FM</h3>
+                            <p class="text-gray-400 mb-4">2022 • 16 faixas</p>
+                            <p class="text-gray-300 mb-4">Álbum conceitual com narração de Jim Carrey e colaborações com Tyler, the Creator.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">Ouro</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Álbum 3 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Weeknd_-_After_Hours.png" alt="Capa do Álbum After Hours" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">After Hours</h3>
+                            <p class="text-gray-400 mb-4">2020 • 14 faixas</p>
+                            <p class="text-gray-300 mb-4">Inclui o single recordista "Blinding Lights" e "Save Your Tears".</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">3× Platina</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Álbum 4 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/b/bd/The_Weeknd_-_Beauty_Behind_the_Madness.png" alt="Capa do Álbum Beauty Behind the Madness" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Beauty Behind the Madness</h3>
+                            <p class="text-gray-400 mb-4">2015 • 14 faixas</p>
+                            <p class="text-gray-300 mb-4">Álbum de grande sucesso com "The Hills" e "Can't Feel My Face".</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">2× Platina</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Álbum 5 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3a/MDM_-_The_Weeknd.jpg" alt="Capa do Álbum My Dear Melancholy" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">My Dear Melancholy,</h3>
+                            <p class="text-gray-400 mb-4">2018 • 6 faixas</p>
+                            <p class="text-gray-300 mb-4">EP retornando às suas raízes de R&B sombrio após Starboy.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">Ouro</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Álbum 6 -->
+                    <div class="album-card bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/3c/b3/0d/897852/1540-1/tsp20160813195419/House-Of-Balloons.jpg" alt="Capa do Álbum House of Balloons" class="w-full">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">House of Balloons</h3>
+                            <p class="text-gray-400 mb-4">2011 • 9 faixas</p>
+                            <p class="text-gray-300 mb-4">Primeira mixtape que estabeleceu seu som característico de R&B sombrio.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-500 font-semibold">Clássico</span>
+                                <a href="#" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-semibold">Ouvir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center">
+                    <h2 class="text-2xl font-bold mb-6">Singles em Destaque</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/pt/a/a3/Capa_de_Blinding_Lights.png" alt="Capa do Single Blinding Lights" class="w-full mb-2 rounded">
+                            <p class="font-semibold">Blinding Lights</p>
+                            <p class="text-sm text-gray-400">2019</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/bb/35/39/bb353980-b0c7-eac5-9509-267feb48d1b3/21UMGIM33221.rgb.jpg/1200x630bb.jpg" alt="Capa do Single Save Your Tears" class="w-full mb-2 rounded">
+                            <p class="font-semibold">Save Your Tears</p>
+                            <p class="text-sm text-gray-400">2020</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/af/The_Weeknd_-_The_Hills.jpg" alt="Capa do Single The Hills" class="w-full mb-2 rounded">
+                            <p class="font-semibold">The Hills</p>
+                            <p class="text-sm text-gray-400">2015</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/pt/d/d6/Capa_de_Earned_It.png" alt="Capa do Single Earned It" class="w-full mb-2 rounded">
+                            <p class="font-semibold">Earned It</p>
+                            <p class="text-sm text-gray-400">2014</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Turnê -->
+        <section id="tour" class="page hidden">
+            <div class="container mx-auto py-16 px-4">
+                <h1 class="text-4xl font-bold mb-12 text-center">Datas da Turnê</h1>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold mb-6 text-purple-500">Turnê After Hours Til Dawn</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Data de Turnê 1 -->
+                            <div class="bg-gray-800 rounded-lg p-6 tour-date">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                                    <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Londres, Reino Unido</h3>
+                                        <p class="text-gray-400">Estádio de Wembley</p>
+                                    </div>
+                                    <div class="mb-4 md:mb-0">
+                                        <p class="text-gray-300">18 de agosto de 2023</p>
+                                        <p class="text-sm text-gray-500">Portões: 18:00</p>
+                                    </div>
+                                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 w-full md:w-auto text-center">Comprar Ingressos</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Data de Turnê 2 -->
+                            <div class="bg-gray-800 rounded-lg p-6 tour-date">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                                    <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Paris, França</h3>
+                                        <p class="text-gray-400">Stade de France</p>
+                                    </div>
+                                    <div class="mb-4 md:mb-0">
+                                        <p class="text-gray-300">22 de agosto de 2023</p>
+                                        <p class="text-sm text-gray-500">Portões: 18:30</p>
+                                    </div>
+                                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 w-full md:w-auto text-center">Comprar Ingressos</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Data de Turnê 3 -->
+                            <div class="bg-gray-800 rounded-lg p-6 tour-date">
+                                <div class="flex flexocol md:flex-row justify-between items-start md:items-center">
+                                    <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Berlim, Alemanha</h3>
+                                        <p class="text-gray-400">Olympiastadion</p>
+                                    </div>
+                                    <div class="mb-4 md:mb-0">
+                                        <p class="text-gray-300">26 de agosto de 2023</p>
+                                        <p class="text-sm text-gray-500">Portões: 18:00</p>
+                                    </div>
+                                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 w-full md:w-auto text-center">Comprar Ingressos</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Data de Turnê 4 -->
+                            <div class="bg-gray-800 rounded-lg p-6 tour-date">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                                    <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Nova York, EUA</h3>
+                                        <p class="text-gray-400">MetLife Stadium</p>
+                                    </div>
+                                    <div class="mb-4 md:mb-0">
+                                        <p class="text-gray-300">2 de setembro de 2023</p>
+                                        <p class="text-sm text-gray-500">Portões: 17:30</p>
+                                    </div>
+                                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 w-full md:w-auto text-center">Comprar Ingressos</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Data de Turnê 5 -->
+                            <div class="bg-gray-800 rounded-lg p-6 tour-date">
+                                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                                    <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Los Angeles, EUA</h3>
+                                        <p class="text-gray-400">SoFi Stadium</p>
+                                    </div>
+                                    <div class="mb-4 md:mb-0">
+                                        <p class="text-gray-300">9 de setembro de 2023</p>
+                                        <p class="text-sm text-gray-500">Portões: 18:00</p>
+                                    </div>
+                                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition duration-300 w-full md:w-auto text-center">Comprar Ingressos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <h3 class="text-xl font-bold mb-4">Cadastre-se para atualizações da turnê</h3>
+                        <div class="max-w-md mx-auto flex">
+                            <input type="email" placeholder="Seu endereço de email" class="form-input flex-grow px-4 py-2 rounded-l-lg focus:outline-none">
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-r-lg font-semibold transition duration-300">Assinar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Contato -->
+        <section id="contact" class="page hidden">
+            <div class="container mx-auto py-16 px-4">
+                <h1 class="text-4xl font-bold mb-12 text-center">Contato</h1>
+                
+                <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Entre em Contato</h2>
+                        <p class="text-gray-300 mb-8">Para solicitações de reservas, pedidos de imprensa ou perguntas gerais, preencha o formulário ou entre em contato diretamente.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-purple-500 mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Email</h3>
+                                    <p class="text-gray-400">info@theweeknd.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-purple-500 mr-4 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Telefone</h3>
+                                    <p class="text-gray-400">+1 (310) 555-0199</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-purple-500 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Endereço</h3>
+                                    <p class="text-gray-400">XO Records<br>123 Music Row<br>Los Angeles, CA 90028</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-bold mb-4">Siga The Weeknd</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-purple-500"><i class="fab fa-instagram text-2xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-purple-500"><i class="fab fa-twitter text-2xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-purple-500"><i class="fab fa-facebook text-2xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-purple-500"><i class="fab fa-tiktok text-2xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-purple-500"><i class="fab fa-youtube text-2xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Formulário de Contato</h2>
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="first-name" class="block mb-1">Primeiro Nome</label>
+                                    <input type="text" id="first-name" name="first-name" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
+                                    <p id="first-name-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira seu primeiro nome</p>
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block mb-1">Sobrenome</label>
+                                    <input type="text" id="last-name" name="last-name" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
+                                    <p id="last-name-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira seu sobrenome</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="birthdate" class="block mb-1">Data de Nascimento</label>
+                                <input type="date" id="birthdate" name="birthdate" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
+                                <p id="birthdate-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira sua data de nascimento</p>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-1">Email</label>
+                                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
+                                <p id="email-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira um endereço de email válido</p>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block mb-1">Telefone</label>
+                                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block mb-1">Mensagem</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none"></textarea>
+                                <p id="message-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira sua mensagem</p>
+                            </div>
+                            
+                            <div class="pt-2">
+                                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 w-full">Enviar Mensagem</button>
+                            </div>
+                        </form>
+                        
+                        <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Sua mensagem foi enviada com sucesso!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/The_Weeknd_Logo.svg/1200px-The_Weeknd_Logo.svg.png" alt="Logo do The Weeknd" class="h-10 mb-4">
+                    <p class="text-gray-400">XO Records<br>Republic Records</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-purple-500 transition duration-300">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-purple-500 transition duration-300">Sobre</a></li>
+                        <li><a href="#albums" class="text-gray-400 hover:text-purple-500 transition duration-300">Álbuns</a></li>
+                        <li><a href="#tour" class="text-gray-400 hover:text-purple-500 transition duration-300">Turnê</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-purple-500 transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300">Política de Cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300">Não Venda Minhas Informações</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber atualizações sobre novos lançamentos e datas de turnê.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu email" class="form-input px-4 py-2 rounded-l-lg focus:outline-none flex-grow">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 The Weeknd. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-purple-500 transition duration-300"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Alternar menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Navegação entre páginas
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                // Atualizar estado ativo para links de navegação
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                link.classList.add('active');
+                
+                // Mostrar a página selecionada
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                    if (page.id === targetId) {
+                        page.classList.remove('hidden');
+                    }
+                });
+                
+                // Fechar menu mobile se aberto
+                mobileMenu.classList.remove('active');
+                
+                // Rolagem para o topo
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Validação de formulário
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validar primeiro nome
+            const firstName = document.getElementById('first-name');
+            const firstNameError = document.getElementById('first-name-error');
+            if (!firstName.value.trim()) {
+                firstNameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                firstNameError.classList.add('hidden');
+            }
+            
+            // Validar sobrenome
+            const lastName = document.getElementById('last-name');
+            const lastNameError = document.getElementById('last-name-error');
+            if (!lastName.value.trim()) {
+                lastNameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                lastNameError.classList.add('hidden');
+            }
+            
+            // Validar data de nascimento
+            const birthdate = document.getElementById('birthdate');
+            const birthdateError = document.getElementById('birthdate-error');
+            if (!birthdate.value) {
+                birthdateError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                birthdateError.classList.add('hidden');
+            }
+            
+            // Validar email
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+            
+            // Validar mensagem
+            const message = document.getElementById('message');
+            const messageError = document.getElementById('message-error');
+            if (!message.value.trim()) {
+                messageError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+            }
+            
+            // Se o formulário for válido, mostrar mensagem de sucesso
+            if (isValid) {
+                contactForm.reset();
+                successMessage.classList.remove('hidden');
+                
+                // Esconder mensagem de sucesso após 5 segundos
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            }
+        });
+        
+        // Inicializar a primeira página como ativa
+        document.querySelector('.page').classList.remove('hidden');
+    </script>
+</body>
+</html>
